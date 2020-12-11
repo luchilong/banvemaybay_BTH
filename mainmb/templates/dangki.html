@@ -7,13 +7,14 @@
 <link href="//fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
 <link href="static/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
 <link href="static/css/styledangki.css" rel='stylesheet' type='text/css' media="all" />
+	<link rel="stylesheet" href="{{ url_for('static', filename=' css/styledangki.css')}}">
 </head>
 <body>
 <h1 class="w3ls">Đăng ký tài khoảng</h1>
 <div class="content-w3ls">
 	<div class="content-agile1">
 		<div class="logo">
-			<a href="/home">
+			<a href="{{ url_for('home') }}">
 				<img src="static/images/logo-i.png" style="width: 50px; background: white; margin: 10px">
 			</a>
 		</div>
