@@ -1,0 +1,378 @@
+@charset "utf-8";
+body{
+	font-size: 14px;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+}
+.container{
+	width: 1024px;
+	height: 4300px;
+	margin: 0 auto;
+}  
+
+/*header*/
+.header{
+	margin: 0 auto;
+	height: 60px;
+	width: 910px;
+}
+.header .logo{
+	float: left;
+}
+.header .menu ul{
+	list-style: none;
+}
+.menu ul li{
+	float: left;
+	line-height: 60px;
+	padding: 0 20px;
+	position: relative;
+	margin: 0 5px;
+}
+.menu ul li:hover{
+	background: #f0efeb;
+}
+.menu ul li a{
+	text-decoration: none;
+	color: black;
+}
+.menu ul li ul{
+	display: none;
+	position: absolute;
+	left: 0;
+	padding: 0;
+}
+.menu ul li ul li{
+	width: 200px;
+	margin: 0;
+}
+.menu ul li:hover ul{
+	display: block;
+	background: #FFFFFF;
+}
+.itemmenu3{
+	height: 60px;
+	line-height: 60px;
+	font-size: 20px;
+	float: left;
+	cursor: pointer;
+}
+.itemmenu3 span{
+	padding-left: 20px
+}
+
+/*banner*/
+.banner{
+	height: 550px;
+}
+.banner img{
+	width: 100%;
+}
+
+/*m1*/
+.m1{
+	width: 820px;
+	height: 150px;
+	margin: 0 auto;
+}
+.m1 .item{
+	float: left;
+	margin: 10px;
+	cursor: pointer;
+}
+.m1 .item:hover{
+	transform: scale(1.1);
+	opacity: 0.8;
+}
+
+/*m2*/
+.m2{
+	width: 820px;
+	height: 530px;
+	margin: 0 auto;
+}
+.m2 .left{
+	margin: 0 10px;
+	float: left;
+}
+.m2 .right .item{
+	height: 250px;
+	margin: 0 10px 10px;
+	float: left;
+}
+.m2 .right .item img{
+	margin-bottom: 0;
+}
+.right .item .name{
+	margin: 0;
+	font-weight: bold;
+	text-align: center;
+}
+.m2 .right .item .sale{
+	margin: 0 0 0 40px;
+	font-size: 12px;
+	text-align: center;
+	color: #767676;
+	float: left;
+	text-decoration: line-through;
+}
+.m2 img:hover{
+	opacity: 0.7;
+	transform: scale(1.1);
+	transition-duration: 0.5s
+}
+.m2 .right .item .price{
+	margin: 0;
+	font-size: 12px;
+	text-align: center;
+	color: #3d6c38;
+}
+
+/*m3*/
+.m3{
+	height: 340px;
+}
+
+/*m4*/
+.m4{
+	width: 820px;
+	height: 500px;
+	margin: 0 auto;
+}
+.m4 .left{
+	width: 50%;
+	margin: 0 10px;
+	float: left;
+}
+.m4 .left .item{
+	height: 250px;
+	margin: 0 10px;
+	float: left;
+}
+.m4 .left .item img{
+	margin-bottom: 0;
+}
+.m4 img:hover{
+	opacity: 0.7;
+	transform: scale(1.1);
+	transition-duration: 0.5s
+}
+.left .item .name{
+	margin: 0;
+	font-weight: bold;
+	text-align: center;
+}
+.m4 .left .item .sale{
+	margin: 0 0 0 40px;
+	font-size: 12px;
+	text-align: center;
+	color: #767676;
+	float: left;
+	text-decoration: line-through;
+}
+.m4 .left .item .price{
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	text-align: center;
+	color: #3d6c38;
+}
+
+/*m5*/
+.m5{
+	width: 850px;
+	height: 450px;
+	margin: 0 auto;
+}
+.m5 h1{
+	text-align: center;
+	font-size: 50px;
+}
+.m5 .item{
+	float: left;
+	margin-left: 25px;
+}
+
+/*m6*/
+.m6{
+	height: 400px;
+	background: #f0efeb;
+}
+.m6 .m61{
+	width: 820px;
+	height: 400px;
+	margin: auto;
+	padding-top: 25px;
+}
+.m6 .m61 h1{
+	text-align: center;
+	font-size: 50px;
+}
+.m6 .m61 .item{
+	float: left;
+	margin: 10px;
+}
+
+/*info*/
+.info{
+	background: #2b2a28;
+	width: 100%;
+	clear: both;
+	margin-top: 10px;
+	height: 400px;
+}
+.info .right{
+	margin: 0;
+	height: 409px;
+	padding: 0;
+	background: #FFFFFF;
+}
+form{
+	margin-left: 200px;
+}
+.info .right .fn input{
+	width: 235px;
+	padding-left: 10px;
+	height: 40px;
+	margin: 10px 5px;
+	margin-top: 40px;
+	background: #f7f7f7;
+	float: left;
+	border: 0px #FFFFFF;
+}
+.info .right .ln input{
+	width: 235px;
+	height: 40px;
+	padding-left: 10px;
+	margin: 10px 5px;
+	margin-top: 40px;
+	background: #f7f7f7;
+	border: 0px #FFFFFF;
+}
+.right .em input{
+	width: 490px;
+	height: 40px;
+	padding-left: 10px;
+	margin: 10px 5px;
+	background: #f7f7f7;
+	border: 0px #FFFFFF;
+}
+.right .mes textarea{
+	width: 490px;
+	height: 110px;
+	padding-left: 10px;
+	margin: 10px 5px;
+	background: #f7f7f7;
+	border: 0px #FFFFFF;
+}
+.right .send{
+	width: 80px;
+	height: 30px;
+	border: 0;
+	font-size: 10px;
+	margin: 5px 5px;
+	background: #3b6a36;
+	color: aliceblue;
+	cursor: pointer;
+}
+.send:hover{
+	opacity: 0.5;
+	color: aliceblue;
+	box-shadow: 2px 1px 3px black;
+}
+
+/*connection*/
+.connection{
+	margin: 0;
+	height: 400px;
+	background: #2b2a28;
+	padding: 10px 0;
+}
+.col{
+	float: left;
+	width: 300px;
+	margin-left: 40px;
+}
+.col p{
+	color: #555452;
+}
+.col h3{
+	color: #FFFFFF;
+}
+.col h4{
+	color: #FFFFFF;
+}
+.connection>.col{
+	margin-left: 55px;
+}
+.col1{
+	width: 240px
+}
+.col .item{
+	float: left;
+	margin: 10px 15px 10px 0;
+}
+.col button{
+	width: 300px;
+	height: 40px;
+	margin-bottom: 20px;
+	cursor: pointer;
+	font-weight: bold;
+}
+.col .call{
+	color: aliceblue;
+	margin-bottom: 10px;
+}
+.col .call span{
+	padding: 0;
+	color: #545452;
+	font-size: 18px;
+	margin-right: 10px;
+}
+.col span{
+	clear: both;
+	color: #FFFFFF;
+	padding: 15px 0;
+	padding-left: 20px;
+	font-size: 20px;
+}
+
+/*footer*/
+.footer{
+	clear: left;
+	margin-top: -16px;
+	padding: 0;
+	height: 50px;
+	background: #22211f;
+}
+.footer img{
+	width: 20px;
+	float: left;
+	margin: 15px;
+	color: #595856;
+	
+}
+.footer .f1{
+	margin-left: 30px;
+}
+.footer p{
+	line-height: 50px;
+	color: #595856;
+}
+.footer .icon{
+	float: left;
+	padding: 0;
+	margin: 0;
+	margin-left: 30px;
+	margin-right: 10px
+}
+
+.cs{
+	width: 1024px;
+	height: 410px;
+	float: left;
+	background: #f0efeb;
+}
+.cs h1{
+	text-align: center;
+	font-size: 50px;
+}
