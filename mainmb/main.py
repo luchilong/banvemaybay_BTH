@@ -1,9 +1,21 @@
 from flask import Flask, render_template, request, redirect, url_for, session
-from flask_login import login_user
+# from flask_login import login_user
 from mainmb import models
+from functools import wraps
 
 
 app = Flask(__name__)
+
+
+def login_required(f):
+    @wraps(f)
+    def check(*args, **kwarg):
+        if not session.get("user"):
+            return redirect(url_for("login", next=request.url))
+
+        return f(*args, **kwarg)
+
+    return check
 
 
 @app.route("/")
@@ -21,24 +33,28 @@ def home():
 
 @app.route('/register', methods=['get', 'post'])
 def register():
+    if session.get("user"):
+        return  redirect(request.url)
+
     err_msg = ""
     if request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        username = request.form.get('username')
         password = request.form.get('password')
-        confirm = request.form.get('confirm')
-        if password == confirm:
-            username = request.form.get('username')
-            email = request.form.get('email')
-
-            if utils.add_user(email=email, username=username, password=password):
-                return redirect('/')
-            else:
-                err_msg = "Hệ thống đang có lỗi! Vui lòng quay lại sau!"
+        confirm = request.form.get('confirm-password')
+        if password.strip() != confirm.strip():
+            err_msg = "Mật khẩu xác nhận không khớp"
         else:
-            err_msg = "Mật khẩu KHÔNG khớp!"
+            if models.add_user(name=name, email=email, username=username, password=password):
+                return redirect(url_for("login"))
+            else:
+                err_msg = "Có gì đó không đúng"
 
     return render_template('dangki.html', err_msg=err_msg)
 
-@app.route('/login', methods=['GET','POST'])
+
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     err_msg = ""
     if request.method == 'POST':
@@ -48,6 +64,9 @@ def login():
         user = models.validate_user(username=username, password=password)
         if user:
             session["user"] = user
+            if "next" in request.args:
+                return redirect(request.args["next"])
+
             return redirect(url_for("home"))
         else:
             err_msg = "login fail"
@@ -55,8 +74,14 @@ def login():
     return render_template('login.html', err_msg=err_msg)
 
 
+@app.route("/logout")
+def logout():
+    session["user"] = None
+    return redirect(url_for("home"))
+
 
 @app.route('/book')
+@login_required
 def book():
     return render_template('datve.html')
 

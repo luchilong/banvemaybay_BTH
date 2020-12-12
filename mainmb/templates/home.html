@@ -30,8 +30,7 @@
         <li><a href="{{ url_for('book') }}">Đặt vé</a></li>
 
         {% if session.user %}
-        <li>{{ session.user.name }}</li>
-        <li><a href="{{ url_for('login') }}">Đăng Xuất</a></li>
+        <li><a href="{{ url_for('logout') }}">Đăng Xuất</a></li>
         {% else %}
         <li><a href="{{ url_for('login') }}">Đăng nhập</a></li>
         {% endif %}
@@ -41,6 +40,10 @@
         </form>
         {% endblock %}
         <li><a href="#">Tìm kiếm</a></li>
+        {% if session.user %}
+        <li>User: {{ session.user.name }}</li>
+        {% else %}
+        {% endif %}
       </ul>
     </div>
   </div>
