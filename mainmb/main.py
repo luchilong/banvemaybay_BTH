@@ -2,9 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 # from flask_login import login_user
 from mainmb import models
 from functools import wraps
-
-
-app = Flask(__name__)
+from mainmb import mainmb
 
 
 def login_required(f):
@@ -18,12 +16,12 @@ def login_required(f):
     return check
 
 
-@app.route("/")
+@mainmb.route("/")
 def main():
     return redirect(url_for("home"))
 
 
-@app.route("/home", methods=["POST", "GET"])
+@mainmb.route("/home", methods=["POST", "GET"])
 def home():
     if request.method == ["POST"]:
         return redirect(url_for("register"))
@@ -31,7 +29,7 @@ def home():
         return render_template("home.html")
 
 
-@app.route('/register', methods=['get', 'post'])
+@mainmb.route('/register', methods=['get', 'post'])
 def register():
     if session.get("user"):
         return  redirect(request.url)
@@ -54,7 +52,7 @@ def register():
     return render_template('dangki.html', err_msg=err_msg)
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@mainmb.route('/login', methods=['GET', 'POST'])
 def login():
     err_msg = ""
     if request.method == 'POST':
@@ -74,15 +72,18 @@ def login():
     return render_template('login.html', err_msg=err_msg)
 
 
-@app.route("/logout")
+@mainmb.route("/logout")
 def logout():
     session["user"] = None
     return redirect(url_for("home"))
 
 
-@app.route('/book')
+@mainmb.route('/book', methods=['GET', 'POST'])
 @login_required
 def book():
+    err_msg = ""
+    # if request.method == 'POST':
+
     return render_template('datve.html')
 
 
@@ -91,5 +92,5 @@ def book():
 #     return utils.get_user_by_id(user_id=user_id)
 
 if __name__ == "__main__":
-    app.secret_key = "^%@&^@*&!@67532623^@%^%@!"
-    app.run(debug=True)
+    # app.secret_key = "^%@&^@*&!@67532623^@%^%@!"
+    mainmb.run(debug=True)

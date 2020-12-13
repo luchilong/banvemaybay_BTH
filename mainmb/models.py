@@ -1,6 +1,6 @@
 from flask_login import UserMixin
 from enum import Enum as UserEnum
-from mainmb import app
+from mainmb import mainmb
 import json
 import hashlib, os
 
@@ -16,14 +16,14 @@ def add_user(name, email, username, password):
     }
     users.append(user)
 
-    with open(os.path.join(app.root_path, "data/user.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(mainmb.root_path, "data/user.json"), "w", encoding="utf-8") as f:
         json.dump(users, f, ensure_ascii=False, indent=4)
 
     return user
 
 
 def read_user():
-    with open(os.path.join(app.root_path, "data/user.json"), encoding="utf-8") as f:
+    with open(os.path.join(mainmb.root_path, "data/user.json"), encoding="utf-8") as f:
         return json.load(f)
 
 
@@ -37,5 +37,5 @@ def validate_user(username, password):
     return None
 
 
-if __name__ == "__main__":
-    print()
+# if __name__ == "__main__":
+#     print()

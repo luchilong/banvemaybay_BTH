@@ -39,7 +39,6 @@
           <li><a href="{{ url_for('register') }}">Đăng ký</a></li>
         </form>
         {% endblock %}
-        <li><a href="#">Tìm kiếm</a></li>
         {% if session.user %}
         <li>User: {{ session.user.name }}</li>
         {% else %}

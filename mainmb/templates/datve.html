@@ -60,7 +60,7 @@
                                         <div class="col-md-6">
                                             <fieldset>
                                                 <label for="from">From:</label>
-                                                <select required name='from' onchange='this.form.()'>
+                                                <select required name='from' id="from" onchange='this.form.()'>
                                                     <option value="">Select a location...</option>
                                                     <option value="Vietnam">Vietnam</option>
                                                     <option value="Cambodia">Cambodia</option>
@@ -78,7 +78,7 @@
                                         <div class="col-md-6">
                                             <fieldset>
                                                 <label for="to">To:</label>
-                                                <select required name='to' onchange='this.form.()'>
+                                                <select required name='to' id="to" onchange='this.form.()'>
                                                     <option value="">Select a location...</option>
                                                     <option value="Vietnam">Vietnam</option>
                                                     <option value="Cambodia">Cambodia</option>
@@ -96,7 +96,7 @@
                                         <div class="col-md-6">
                                             <fieldset>
                                                 <label for="departure">Departure date:</label>
-                                                <input name="deparure" type="text" class="form-control date" id="deparure"
+                                                <input name="deparure" type="text" class="form-control date" id="departure"
                                                        placeholder="Select date..." required="" onchange='this.form.()'>
                                             </fieldset>
                                         </div>
@@ -111,19 +111,19 @@
                                             <div class="radio-select">
                                                 <div class="row">
                                                     <div class="col-md-6 col-sm-6 col-xs-6">
-                                                        <label for="round">Round</label>
-                                                        <input type="radio" name="trip" id="round" value="round" required="required"onchange='this.form.()'>
+                                                        <label for="Gheloai1">common</label>
+                                                        <input type="radio" name="trip" id="Gheloai1" value="Gheloai1" required="required"onchange='this.form.()'>
                                                     </div>
                                                     <div class="col-md-6 col-sm-6 col-xs-6">
-                                                        <label for="oneway">Oneway</label>
-                                                        <input type="radio" name="trip" id="oneway" value="one-way" required="required"onchange='this.form.()'>
+                                                        <label for="Gheloai2">premium</label>
+                                                        <input type="radio" name="trip" id="Gheloai2" value="Gheloai2" required="required"onchange='this.form.()'>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <fieldset>
-                                                <button type="submit" id="form-submit" class="btn">Order Ticket Now</button>
+                                                <button type="submit" id="submit" class="btn">Order Ticket Now</button>
                                             </fieldset>
                                         </div>
                                     </div>
