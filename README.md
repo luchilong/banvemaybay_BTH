@@ -1,2 +1,0 @@
-# banvemaybay_BTH
-BT

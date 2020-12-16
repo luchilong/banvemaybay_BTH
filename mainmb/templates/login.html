@@ -13,14 +13,14 @@
             {{ err_msg }}
         </div>
         {% endif %}
-        <form method="post">
+        <form method="post" action="{{ url_for('login_user') }}">
             <p>Username</p>
             <input type="text" name="username" placeholder="Enter Username">
             <p>Password</p>
             <input type="password" name="password" placeholder="Enter Password">
-            <input type="submit" name="" value="Login">
+            <input type="submit" value="Login">
             <a href="#">Lost your password?</a><br>
-            <a href="#">Don't have an account?</a>
+            <a href="{{ url_for('register') }}">Don't have an account?</a>
         </form>
         
     </div>

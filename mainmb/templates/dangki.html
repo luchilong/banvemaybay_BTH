@@ -20,13 +20,13 @@
 		</div>
 	</div>
 	<div class="content-agile2">
-		<form action="#" method="post">
+		<form action="{{ url_for('register') }}" method="post">
 			<div class="form-control w3layouts"> 
 				<input type="text" id="firstname" name="name" placeholder="YourName" title="Please enter your Name" required="">
 			</div>
 
 			<div class="form-control w3layouts">	
-				<input type="email" id="email" name="email" placeholder="mail@example.com" title="Please enter a valid email" required="">
+				<input type="ID.card" id="email" name="CMND" placeholder="ID.card" title="Please enter a valid email" required="">
 			</div>
 
 			<div class="form-control w3layouts">
@@ -41,7 +41,7 @@
 				<input type="password" class="lock" name="confirm-password" placeholder="Confirm Password" id="password2" required="">
 			</div>			
 			
-			<input type="submit" class="register" value="Register">
+			<input type="submit" class="register" value="register">
 		</form>
 		<p class="wthree w3l">Đăng ký nhanh với tài khoảng của bạn</p>
 		<ul class="social-agileinfo wthree2">

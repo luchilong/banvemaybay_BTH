@@ -1,0 +1,208 @@
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    font-family: 'Quicksand', sans-serif;
+}
+i {
+    padding: 8px;
+}
+
+.imgStater {
+    position: relative;
+    width: 100%;
+}
+.imgStater img {
+    width: 100%;
+}
+.cards {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cards .card {
+    margin: 10px;
+}
+.page-footer {
+    color: white;
+    background-color: #646e78;
+    clear: both;
+    position: relative;
+    margin-top: auto;
+}
+.footer-context {
+    width: 30%;
+}
+.footer-context h5 {
+    font-size: 32px;
+    font-weight: bold;
+}
+.footer-card h5 {
+    font-size: 24px;
+}
+.footer-context p,
+.footer-card ul li a {
+    font-size: 14px;
+}
+.footer-card ul li {
+    padding-left: 10px;
+}
+.footer-card {
+    padding: 10px;
+}
+.navbar-color {
+    justify-content: space-between;
+}
+.navbar-color ul {
+    margin: 10px;
+}
+.navbar-color ul li {
+    padding: 10px;
+    background: #f8f9fa !important;
+}
+.btn-nav {
+    width: 100%;
+}
+
+.info {
+    color: white;
+    padding: 10px;
+    text-align: center;
+    background-color: #8d98a7;
+}
+.info h1 {
+    font-size: 32px;
+}
+.info h3 {
+    font-size: 16px;
+}
+.banner {
+    /* background: linear-gradient(180deg, rgb(255 255 255) 0%, rgb(0 0 0 / 0%) 90%, rgb(0 0 0 / 100%) 100%), url(https://images2.minutemediacdn.com/image/upload/c_crop,h_1189,w_2119,x_0,y_13/f_auto,q_auto,w_1100/v1554929260/shape/mentalfloss/538764-istock-898619710.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+}
+.carousel-item {
+    background: linear-gradient(
+        180deg,
+        rgb(255 255 255) 0%,
+        rgb(0 0 0 / 0%) 90%,
+        rgb(0 0 0 / 100%) 100%
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* height: 90vh; */
+    overflow: hidden;
+}
+.navbar {
+    min-height: 10vh;
+}
+.slide {
+    height: 88%;
+    overflow: hidden;
+}
+
+.login {
+    position: relative;
+}
+.login h1 {
+    text-align: center;
+    padding: 8px;
+    font-size: 3rem;
+}
+.register h1 {
+    text-align: center;
+    padding: 8px;
+    font-size: 3rem;
+}
+.container .form-group {
+    padding-bottom: 8px;
+}
+
+.query {
+    height: fit-content;
+    margin: 16px 0;
+    min-height: 60vh;
+}
+
+.login-container {
+    display: block;
+}
+.btn-submit {
+    text-align: center;
+}
+.btn-submit input {
+    width: 100%;
+}
+
+.register {
+    padding: 0 10vw;
+    position: relative;
+}
+
+.register-btn {
+    padding-top: 1rem;
+}
+
+.msg-box {
+    text-align: center;
+    position: relative;
+    padding: 10px;
+    z-index: 999;
+}
+.card {
+    margin: auto;
+}
+.cards > .card > img {
+    height: 200px;
+    object-fit: cover;
+}
+.card-btn {
+    text-align: end;
+}
+.card-btn input {
+    width: 30%;
+}
+.card-title {
+    font-weight: bold;
+}
+
+.book-card {
+    margin: 10px;
+}
+.container {
+    margin: 1rem auto;
+}
+.container .card {
+    margin-bottom: 1rem;
+}
+.container-billing {
+    width: 100%;
+}
+.fit-content {
+    width: 50%;
+}
+.pagenotfound {
+    background: whitesmoke;
+}
+.title h1 {
+    text-align: center;
+    padding: 8px;
+    font-size: 3rem;
+}
+.list-group-item {
+    padding: 1.5rem;
+}
+.payment table.table * {
+    border: none !important;
+    text-align: center !important;
+}
+.danger {
+    color: #fff !important;
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+}

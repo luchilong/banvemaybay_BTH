@@ -28,19 +28,18 @@
       <ul>
         <li><a href="#">Trang chủ</a></li>
         <li><a href="{{ url_for('book') }}">Đặt vé</a></li>
-
-        {% if session.user %}
+        {% if current_user.is_authenticated %}
         <li><a href="{{ url_for('logout') }}">Đăng Xuất</a></li>
         {% else %}
-        <li><a href="{{ url_for('login') }}">Đăng nhập</a></li>
+        <li><a href="{{ url_for('login_user') }}">Đăng nhập</a></li>
         {% endif %}
-        {% block content %}
+        {% if not current_user.is_authenticated %}
         <form action="#", method="POST">
           <li><a href="{{ url_for('register') }}">Đăng ký</a></li>
         </form>
-        {% endblock %}
-        {% if session.user %}
-        <li>User: {{ session.user.name }}</li>
+        {% endif %}
+        {% if current_user.is_authenticated %}
+        <li>User: {{ current_user.HoTen }}</li>
         {% else %}
         {% endif %}
       </ul>

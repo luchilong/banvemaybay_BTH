@@ -18,6 +18,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
         <script src="static/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
     </head>
 
 <body>
@@ -55,75 +56,83 @@
                         <div id="tab1">
                             <div class="submit-form">
                                 <h4>Check availability for <em>direction</em>:</h4>
-                                <form id="form-submit" action="#" method="get">
+                                <form id="form-submit" action="{{ url_for('book_option') }}" method="post">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <fieldset>
                                                 <label for="from">From:</label>
-                                                <select required name='from' id="from" onchange='this.form.()'>
-                                                    <option value="">Select a location...</option>
-                                                    <option value="Vietnam">Vietnam</option>
-                                                    <option value="Cambodia">Cambodia</option>
-                                                    <option value="Hong Kong">Hong Kong</option>
-                                                    <option value="India">India</option>
-                                                    <option value="Japan">Japan</option>
-                                                    <option value="Korea">Korea</option>
-                                                    <option value="Laos">Laos</option>
-                                                    <option value="Myanmar">Myanmar</option>
-                                                    <option value="Singapore">Singapore</option>
-                                                    <option value="Thailand">Thailand</option>
+                                                <select required name='SBdi' id="from" onchange='this.form.()'>
+<!--                                                    <option value="">Select a location...</option>-->
+<!--                                                    <option value="Vietnam">Vietnam</option>-->
+<!--                                                    <option value="Cambodia">Cambodia</option>-->
+<!--                                                    <option value="Hong Kong">Hong Kong</option>-->
+<!--                                                    <option value="India">India</option>-->
+<!--                                                    <option value="Japan">Japan</option>-->
+<!--                                                    <option value="Korea">Korea</option>-->
+<!--                                                    <option value="Laos">Laos</option>-->
+<!--                                                    <option value="Myanmar">Myanmar</option>-->
+<!--                                                    <option value="Singapore">Singapore</option>-->
+<!--                                                    <option value="Thailand">Thailand</option>-->
+
+                                                    {% for i in Sanbays %}
+                                                    <option>{{ i.MaSB }}. {{ i.TenNuocSB }}</option>
+                                                    {% endfor %}
                                                 </select>
                                             </fieldset>
                                         </div>
                                         <div class="col-md-6">
                                             <fieldset>
                                                 <label for="to">To:</label>
-                                                <select required name='to' id="to" onchange='this.form.()'>
-                                                    <option value="">Select a location...</option>
-                                                    <option value="Vietnam">Vietnam</option>
-                                                    <option value="Cambodia">Cambodia</option>
-                                                    <option value="Hong Kong">Hong Kong</option>
-                                                    <option value="India">India</option>
-                                                    <option value="Japan">Japan</option>
-                                                    <option value="Korea">Korea</option>
-                                                    <option value="Laos">Laos</option>
-                                                    <option value="Myanmar">Myanmar</option>
-                                                    <option value="Singapore">Singapore</option>
-                                                    <option value="Thailand">Thailand</option>
+                                                <select required name='SBden' id="to" onchange='this.form.()'>
+<!--                                                    <option value="">Select a location...</option>-->
+<!--                                                    <option value="Vietnam">Vietnam</option>-->
+<!--                                                    <option value="Cambodia">Cambodia</option>-->
+<!--                                                    <option value="Hong Kong">Hong Kong</option>-->
+<!--                                                    <option value="India">India</option>-->
+<!--                                                    <option value="Japan">Japan</option>-->
+<!--                                                    <option value="Korea">Korea</option>-->
+<!--                                                    <option value="Laos">Laos</option>-->
+<!--                                                    <option value="Myanmar">Myanmar</option>-->
+<!--                                                    <option value="Singapore">Singapore</option>-->
+<!--                                                    <option value="Thailand">Thailand</option>-->
+
+                                                    {% for i in Sanbays %}
+                                                    <option>{{ i.MaSB }}. {{ i.TenNuocSB }}</option>
+                                                    {% endfor %}
                                                 </select>
                                             </fieldset>
                                         </div>
+<!--                                        <div class="col-md-6">-->
+<!--                                            <fieldset>-->
+<!--                                                <label for="departure">Departure date:</label>-->
+<!--                                                <input name="deparure" type="text" class="form-control date" id="departure"-->
+<!--                                                       placeholder="Select date..." required="" onchange='this.form.()'>-->
+<!--                                            </fieldset>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <fieldset>-->
+<!--                                                <label for="return">Return date:</label>-->
+<!--                                                <input name="return" type="text" class="form-control date" id="return"-->
+<!--                                                       placeholder="Select date..." required="" onchange='this.form.()'>-->
+<!--                                            </fieldset>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-md-6">-->
+<!--                                            <div class="radio-select">-->
+<!--                                                <div class="row">-->
+<!--                                                    <div class="col-md-6 col-sm-6 col-xs-6">-->
+<!--                                                        <label for="Gheloai1">mormal</label>-->
+<!--                                                        <input type="radio" name="trip" id="Gheloai1" value="Gheloai1" required="required"onchange='this.form.()'>-->
+<!--                                                    </div>-->
+<!--                                                    <div class="col-md-6 col-sm-6 col-xs-6">-->
+<!--                                                        <label for="Gheloai2">premium</label>-->
+<!--                                                        <input type="radio" name="trip" id="Gheloai2" value="Gheloai2" required="required"onchange='this.form.()'>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
                                         <div class="col-md-6">
                                             <fieldset>
-                                                <label for="departure">Departure date:</label>
-                                                <input name="deparure" type="text" class="form-control date" id="departure"
-                                                       placeholder="Select date..." required="" onchange='this.form.()'>
-                                            </fieldset>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <fieldset>
-                                                <label for="return">Return date:</label>
-                                                <input name="return" type="text" class="form-control date" id="return"
-                                                       placeholder="Select date..." required="" onchange='this.form.()'>
-                                            </fieldset>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="radio-select">
-                                                <div class="row">
-                                                    <div class="col-md-6 col-sm-6 col-xs-6">
-                                                        <label for="Gheloai1">common</label>
-                                                        <input type="radio" name="trip" id="Gheloai1" value="Gheloai1" required="required"onchange='this.form.()'>
-                                                    </div>
-                                                    <div class="col-md-6 col-sm-6 col-xs-6">
-                                                        <label for="Gheloai2">premium</label>
-                                                        <input type="radio" name="trip" id="Gheloai2" value="Gheloai2" required="required"onchange='this.form.()'>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <fieldset>
-                                                <button type="submit" id="submit" class="btn">Order Ticket Now</button>
+                                                <button type="submit" id="submit" class="btn">Find Ticket Now</button>
                                             </fieldset>
                                         </div>
                                     </div>
